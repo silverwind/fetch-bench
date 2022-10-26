@@ -7,7 +7,6 @@ const urls = Object.keys(pkg.devDependencies).map(name => {
   return `https://registry.npmjs.org/${name.replace(/\//g, "%2f")}`;
 });
 
-
 const t1 = performance.now();
 const dispatcher = new UndiciAgent({connections: 96});
 await Promise.all(urls.map(async url => {
@@ -23,6 +22,3 @@ await Promise.all(urls.map(async url => {
   await res.text();
 }));
 console.info(`node-fetch: ${Math.round(performance.now() - t2)}ms`);
-
-process.exit();
-
