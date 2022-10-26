@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "fetch-enhanced": "10.0.3",
+    "node-fetch": "3.2.10",
+    "undici": "5.11.0"
+  }
+}
