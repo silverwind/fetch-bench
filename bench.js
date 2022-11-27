@@ -1,9 +1,10 @@
+import {readFileSync} from "fs";
 import nodeFetch from "node-fetch";
 import {fetch as undiciFetch, Agent as UndiciAgent} from "undici";
 import {Agent as HttpsAgent} from "https";
-import pkg from "./1500-deps.json" assert {type: "json"};
 import axios from "axios";
 
+const pkg = JSON.parse(readFileSync(new URL("1500-deps.json", import.meta.url)));
 const urls = Object.keys(pkg.devDependencies).map(name => `https://registry.npmjs.org/${name.replace(/\//g, "%2f")}`);
 const warmupUrls = urls.slice(0, 10);
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
