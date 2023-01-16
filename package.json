@@ -1,9 +1,9 @@
 {
   "type": "module",
   "dependencies": {
-    "axios": "1.2.0",
+    "axios": "1.2.2",
     "node-fetch": "3.3.0",
     "p-all": "4.0.0",
-    "undici": "5.13.0"
+    "undici": "5.15.0"
   }
 }
