@@ -1,7 +1,6 @@
 import {readFileSync} from "fs";
 import pAll from "p-all";
 
-
 const pkg = JSON.parse(readFileSync(new URL("1500-deps.json", import.meta.url)));
 const urls = Object.keys(pkg.devDependencies).map(name => `https://registry.npmjs.org/${name.replace(/\//g, "%2f")}`);
 const warmupUrls = urls.slice(0, 10);
