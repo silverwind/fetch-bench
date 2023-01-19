@@ -4,6 +4,6 @@ node_modules: package-lock.json
 
 .PHONY: bench
 bench: node_modules
-	@node bench.js
+	@node node.js
 	@deno run -A deno.js
 	@bun run bun.js
