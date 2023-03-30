@@ -1,7 +1,3 @@
-node_modules: package-lock.json
-	@npm install --no-save
-	@touch node_modules
-
 .PHONY: bench
 bench: node_modules
 	@node axios.js
@@ -9,3 +5,7 @@ bench: node_modules
 	@node undici.js
 	@deno run -A deno.js
 	@bun run bun.js
+
+node_modules: package-lock.json
+	@npm install --no-save
+	@touch node_modules

@@ -5,7 +5,7 @@ This repo contains benchmarks to compare of server-side `fetch` implementations.
 # Usage
 
 ```
-$ make bench
+$ make
 axios: 2515ms
 node-fetch: 4812ms
 undici: 2868ms
