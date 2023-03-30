@@ -8,10 +8,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const opts = {concurrency: process.argv[2] ? Number(process.argv[2]) : 96};
 
 // warm up the JIT
-await Promise.all([
-    ...warmupUrls.map(url => fetch(url).then(res => res.text())),
-]);
-
+await warmupUrls.map(url => fetch(url).then(res => res.text()));
 await sleep(500);
 
 const t2 = performance.now();
