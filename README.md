@@ -6,9 +6,10 @@ This repo contains benchmarks to compare of server-side `fetch` implementations.
 
 ```
 $ make
-axios: 2825ms
-node-fetch: 5107ms
-undici: 2880ms
-deno: 1660ms
-bun: 2182ms
+node-fetch: 5025ms
+undici: 3113ms
+deno: 2423ms
+bun: 2083ms
+axios: 2016ms
+got: 2604ms
 ```
