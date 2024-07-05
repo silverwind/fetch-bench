@@ -6,5 +6,9 @@
     "node-fetch": "3.3.2",
     "p-all": "5.0.0",
     "undici": "6.19.2"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "eslint-config-silverwind": "88.2.0"
   }
 }
