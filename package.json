@@ -1,10 +1,10 @@
 {
   "type": "module",
   "dependencies": {
-    "axios": "1.6.2",
-    "got": "14.0.0",
+    "axios": "1.7.2",
+    "got": "14.4.1",
     "node-fetch": "3.3.2",
     "p-all": "5.0.0",
-    "undici": "6.2.0"
+    "undici": "6.19.2"
   }
 }
