@@ -16,10 +16,10 @@ export async function run(name, fn, fnOpts = {}) {
   const pAllOpts = {concurrency: 96};
 
   // warm up the JIT
-  await pAll(urls.slice(0, 10).map(url => () => runFetch(url, fn, fnOpts), pAllOpts));
+  await pAll(urls.slice(0, 10).map(url => () => runFetch(url, fn, fnOpts)), pAllOpts);
   await sleep(250);
 
   const t1 = performance.now();
-  await pAll(urls.map(url => () => runFetch(url, fn, fnOpts), pAllOpts));
+  await pAll(urls.map(url => () => runFetch(url, fn, fnOpts)), pAllOpts);
   console.info(`${name}: ${Math.round(performance.now() - t1)}ms`);
 }
