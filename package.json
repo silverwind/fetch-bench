@@ -1,14 +1,16 @@
 {
   "type": "module",
   "dependencies": {
-    "axios": "1.7.2",
-    "got": "14.4.2",
+    "axios": "1.12.1",
+    "got": "14.4.8",
     "node-fetch": "3.3.2",
     "p-all": "5.0.0",
-    "undici": "6.19.4"
+    "undici": "7.16.0"
   },
   "devDependencies": {
-    "eslint": "8.57.0",
-    "eslint-config-silverwind": "90.0.0"
+    "eslint": "9.35.0",
+    "eslint-config-silverwind": "103.0.4",
+    "typescript": "5.9.2",
+    "typescript-config-silverwind": "10.0.1"
   }
 }
