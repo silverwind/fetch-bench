@@ -7,6 +7,6 @@ bench: node_modules
 	@node axios.js
 	@node got.js
 
-node_modules: package-lock.json
-	@npm install --no-save
+node_modules: pnpm-lock.yaml
+	@pnpm install
 	@touch node_modules
