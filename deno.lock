@@ -2648,15 +2648,16 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
-        "npm:axios@1.13.4",
-        "npm:eslint-config-silverwind@120.1.1",
-        "npm:eslint@9.39.2",
-        "npm:got@14.6.6",
+        "npm:axios@1.15.2",
+        "npm:eslint-config-silverwind@132.0.0",
+        "npm:eslint@9.39.4",
+        "npm:got@15.0.3",
         "npm:node-fetch@3.3.2",
         "npm:p-all@5.0.1",
-        "npm:typescript-config-silverwind@14.0.0",
-        "npm:typescript@5.9.3",
-        "npm:undici@7.20.0"
+        "npm:typescript-config-silverwind@18.0.0",
+        "npm:typescript@6.0.3",
+        "npm:undici@8.1.0",
+        "npm:updates-config-silverwind@2.1.1"
       ]
     }
   }
