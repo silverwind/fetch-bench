@@ -1,8 +1,5 @@
 {
   "version": "5",
-  "specifiers": {
-    "npm:node-fetch@3.3.2": "3.3.2"
-  },
   "npm": {
     "@babel/code-frame@7.24.7": {
       "integrity": "sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA==",
@@ -2652,7 +2649,6 @@
         "npm:eslint-config-silverwind@132.0.0",
         "npm:eslint@9.39.4",
         "npm:got@15.0.3",
-        "npm:node-fetch@3.3.2",
         "npm:p-all@5.0.1",
         "npm:typescript-config-silverwind@18.0.0",
         "npm:typescript@6.0.3",
