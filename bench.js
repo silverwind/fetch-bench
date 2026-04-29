@@ -22,11 +22,16 @@ while (true) {
 }
 
 const benchmarks = [
-  ["node", ["undici.js"]],
-  ["deno", ["run", "-A", "deno.js"]],
-  ["bun", ["run", "bun.js"]],
-  ["node", ["axios.js"]],
-  ["node", ["got.js"]],
+  ["node", ["benchmarks/nodehttp.js"]],
+  ["node", ["benchmarks/nodefetch.js"]],
+  ["node", ["benchmarks/undici7.js"]],
+  ["node", ["benchmarks/undici8.js"]],
+  ["deno", ["run", "-A", "benchmarks/deno.js"]],
+  ["bun", ["run", "benchmarks/bun.js"]],
+  ["node", ["benchmarks/ky.js"]],
+  ["node", ["benchmarks/ofetch.js"]],
+  ["node", ["benchmarks/axios.js"]],
+  ["node", ["benchmarks/got.js"]],
 ];
 
 const rows = [];

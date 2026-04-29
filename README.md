@@ -8,11 +8,16 @@ The local server isolates client overhead from network/CDN noise. Reported numbe
 
 ```
 $ make
-client  median    min    max
-------  ------  -----  -----
-undici    92.8   83.0   95.7
-deno      63.2   57.6   69.5
-bun       25.6   21.6   28.0
-axios    128.0  114.9  134.0
-got      158.5  129.7  164.1
+client      median    min    max
+----------  ------  -----  -----
+node:http     64.2   60.6   74.7
+node-fetch   135.0  121.7  159.6
+undici7       94.0   86.5  111.1
+undici8       92.7   83.1  115.9
+deno          59.7   55.5   66.4
+bun           25.2   22.6   32.1
+ky           119.7  103.9  151.2
+ofetch        99.3   87.7  119.8
+axios        127.9  121.7  140.2
+got          160.3  146.6  176.1
 ```
