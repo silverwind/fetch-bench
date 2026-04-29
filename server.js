@@ -1,4 +1,4 @@
-import {createServer} from "node:net";
+import {createServer} from "node:http";
 
 const PORT = Number(process.env.PORT) || 3210;
 
@@ -17,31 +17,14 @@ const body = Buffer.from(JSON.stringify({
   ])),
 }));
 
-const responseBuffer = Buffer.concat([
-  Buffer.from(
-    `HTTP/1.1 200 OK\r\n` +
-    `Content-Type: application/json\r\n` +
-    `Content-Length: ${body.length}\r\n` +
-    `Connection: keep-alive\r\n` +
-    `\r\n`,
-  ),
-  body,
-]);
+const headers = {
+  "content-type": "application/json",
+  "content-length": body.length,
+};
 
-const REQUEST_END = Buffer.from("\r\n\r\n");
-
-const server = createServer(socket => {
-  socket.setNoDelay(true);
-  let buf = Buffer.alloc(0);
-  socket.on("data", chunk => {
-    buf = buf.length ? Buffer.concat([buf, chunk]) : chunk;
-    let idx;
-    while ((idx = buf.indexOf(REQUEST_END)) !== -1) {
-      socket.write(responseBuffer);
-      buf = buf.subarray(idx + REQUEST_END.length);
-    }
-  });
-  socket.on("error", () => {});
+const server = createServer((_, res) => {
+  res.writeHead(200, headers);
+  res.end(body);
 });
 
 server.listen(PORT, "127.0.0.1", () => {

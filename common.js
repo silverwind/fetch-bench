@@ -4,7 +4,7 @@ import pAll from "p-all";
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const PORT = Number(process.env.PORT) || 3210;
 
-const REQUESTS_PER_RUN = 1000;
+const REQUESTS_PER_RUN = 2000;
 const TIMED_RUNS = 10;
 const WARMUP_RUNS = 1;
 const CONCURRENCY = 96;
