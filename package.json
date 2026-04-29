@@ -7,8 +7,7 @@
     "node-fetch": "3.3.2",
     "ofetch": "1.5.1",
     "p-all": "5.0.1",
-    "undici7": "npm:undici@7.25.0",
-    "undici8": "npm:undici@8.1.0"
+    "undici": "8.1.0"
   },
   "devDependencies": {
     "eslint": "9.39.4",

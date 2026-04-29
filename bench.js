@@ -24,8 +24,9 @@ while (true) {
 const benchmarks = [
   ["node", ["benchmarks/nodehttp.js"]],
   ["node", ["benchmarks/nodefetch.js"]],
-  ["node", ["benchmarks/undici7.js"]],
-  ["node", ["benchmarks/undici8.js"]],
+  ["node", ["benchmarks/undici-fetch.js"]],
+  ["node", ["benchmarks/undici-request.js"]],
+  ["node", ["benchmarks/undici-pool.js"]],
   ["deno", ["run", "-A", "benchmarks/deno.js"]],
   ["bun", ["run", "benchmarks/bun.js"]],
   ["node", ["benchmarks/ky.js"]],

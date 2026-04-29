@@ -2655,7 +2655,6 @@
         "npm:p-all@5.0.1",
         "npm:typescript-config-silverwind@18.0.0",
         "npm:typescript@6.0.3",
-        "npm:undici@7.25.0",
         "npm:undici@8.1.0",
         "npm:updates-config-silverwind@2.1.1"
       ]

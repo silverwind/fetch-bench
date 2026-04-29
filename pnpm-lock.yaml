@@ -26,12 +26,9 @@ importers:
       p-all:
         specifier: 5.0.1
         version: 5.0.1
-      undici7:
-        specifier: npm:undici@7.25.0
-        version: undici@7.25.0
-      undici8:
-        specifier: npm:undici@8.1.0
-        version: undici@8.1.0
+      undici:
+        specifier: 8.1.0
+        version: 8.1.0
     devDependencies:
       eslint:
         specifier: 9.39.4
@@ -903,10 +900,6 @@ packages:
     resolution: {integrity: sha512-rvKSBiC5zqCCiDZ9kAOszZcDvdAHwwIKJG33Ykj43OKcWsnmcBRL09YTU4nOeHZ8Y2a7l1MgTd08SBe9A8Qj6A==}
     engines: {node: '>=18'}
 
-  undici@7.25.0:
-    resolution: {integrity: sha512-xXnp4kTyor2Zq+J1FfPI6Eq3ew5h6Vl0F/8d9XU5zZQf1tX9s2Su1/3PiMmUANFULpmksxkClamIZcaUqryHsQ==}
-    engines: {node: '>=20.18.1'}
-
   undici@8.1.0:
     resolution: {integrity: sha512-E9MkTS4xXLnRPYqxH2e6Hr2/49e7WFDKczKcCaFH4VaZs2iNvHMqeIkyUAD9vM8kujy9TjVrRlQ5KkdEJxB2pw==}
     engines: {node: '>=22.19.0'}
@@ -1731,8 +1724,6 @@ snapshots:
   ufo@1.6.3: {}
 
   uint8array-extras@1.5.0: {}
-
-  undici@7.25.0: {}
 
   undici@8.1.0: {}
 
