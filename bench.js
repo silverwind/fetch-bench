@@ -50,7 +50,7 @@ try {
   server.kill("SIGTERM");
 }
 
-const headers = ["client", "median", "min", "max"];
+const headers = ["client", "median", "min", "max", "user", "sys"];
 const widths = headers.map((header, idx) => Math.max(header.length, ...rows.map(row => row[idx].length)));
 const fmt = row => row.map((cell, idx) => idx === 0 ? cell.padEnd(widths[idx]) : cell.padStart(widths[idx])).join("  ");
 

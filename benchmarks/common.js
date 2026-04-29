@@ -10,6 +10,13 @@ const WARMUP_RUNS = 1;
 const CONCURRENCY = 96;
 const WARMUP_PAUSE_MS = 100;
 
+const median = arr => {
+  const sorted = arr.slice().sort((firstNum, secondNum) => firstNum - secondNum);
+  return sorted.length % 2 ?
+    sorted[(sorted.length - 1) / 2] :
+    (sorted[sorted.length / 2 - 1] + sorted[sorted.length / 2]) / 2;
+};
+
 async function runFetch(url, fn, fnOpts) {
   const res = await (fnOpts?.responseType ? fn(url, fnOpts) : fn(url));
   if (!fnOpts?.responseType) {
@@ -32,18 +39,23 @@ export async function run(name, fn, fnOpts = {}) {
   await sleep(WARMUP_PAUSE_MS);
 
   const times = [];
+  const userCpu = [];
+  const sysCpu = [];
   for (let runIdx = 0; runIdx < TIMED_RUNS; runIdx++) {
+    const cpuStart = process.cpuUsage();
     const t1 = performance.now();
     await pAll(urls.map(url => () => runFetch(url, fn, fnOpts)), pAllOpts);
     times.push(performance.now() - t1);
+    const cpu = process.cpuUsage(cpuStart);
+    userCpu.push(cpu.user / 1000);
+    sysCpu.push(cpu.system / 1000);
   }
 
-  const sorted = times.slice().sort((firstNum, secondNum) => firstNum - secondNum);
-  const min = sorted[0];
-  const max = sorted.at(-1);
-  const median = sorted.length % 2 ?
-    sorted[(sorted.length - 1) / 2] :
-    (sorted[sorted.length / 2 - 1] + sorted[sorted.length / 2]) / 2;
+  const min = Math.min(...times);
+  const max = Math.max(...times);
+  const wallMedian = median(times);
+  const userMedian = median(userCpu);
+  const sysMedian = median(sysCpu);
 
-  console.info(`${name}\t${median.toFixed(1)}\t${min.toFixed(1)}\t${max.toFixed(1)}`);
+  console.info(`${name}\t${wallMedian.toFixed(1)}\t${min.toFixed(1)}\t${max.toFixed(1)}\t${userMedian.toFixed(1)}\t${sysMedian.toFixed(1)}`);
 }
