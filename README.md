@@ -6,7 +6,7 @@ The local server isolates client overhead from network/CDN noise. Reported numbe
 
 This benchmark measures client-side overhead only — not real-world network behavior. Under a slow or lossy network the wallclock differences between clients largely disappear.
 
-# Usage
+Example output:
 
 ```
 $ make
