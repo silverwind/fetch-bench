@@ -14,7 +14,7 @@
     "eslint-config-silverwind": "133.0.1",
     "typescript": "6.0.3",
     "typescript-config-silverwind": "18.0.0",
-    "updates-config-silverwind": "2.1.2"
+    "updates-config-silverwind": "3.0.2"
   },
   "packageManager": "pnpm@10.33.4"
 }
