@@ -16,5 +16,5 @@
     "typescript-config-silverwind": "20.0.3",
     "updates-config-silverwind": "4.0.5"
   },
-  "packageManager": "pnpm@11.24.0"
+  "packageManager": "pnpm@12.3.4"
 }
