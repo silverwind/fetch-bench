@@ -37,3 +37,4 @@ update-js: node_modules
 
 .PHONY: update-actions
 update-actions: node_modules
+	pnpm exec updates -u -M actions
