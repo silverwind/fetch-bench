@@ -18,12 +18,12 @@ lint-fix: node_modules
 .PHONY: test
 test: node_modules
 
-.PHONY: build
-build: node_modules
-
 .PHONY: bench
 bench: node_modules
 	@node bench.js
+
+.PHONY: build
+build: node_modules
 
 .PHONY: update
 update: update-js update-actions
