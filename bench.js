@@ -1,11 +1,9 @@
 import {spawn, spawnSync} from "node:child_process";
 
 const PORT = Number(process.env.PORT) || 3210;
+const env = {...process.env, PORT: String(PORT)};
 
-const server = spawn("node", ["server.js"], {
-  stdio: "ignore",
-  env: {...process.env, PORT: String(PORT)},
-});
+const server = spawn("node", ["server.js"], {stdio: "ignore", env});
 
 const deadline = Date.now() + 5000;
 while (true) {
@@ -14,7 +12,7 @@ while (true) {
     break;
   } catch {
     if (Date.now() > deadline) {
-      server.kill("SIGTERM");
+      server.kill();
       throw new Error("server failed to start within 5s");
     }
     await new Promise(resolve => setTimeout(resolve, 50));
@@ -38,17 +36,14 @@ const benchmarks = [
 const rows = [];
 try {
   for (const [cmd, args] of benchmarks) {
-    const result = spawnSync(cmd, args, {
-      encoding: "utf8",
-      env: {...process.env, PORT: String(PORT)},
-    });
+    const result = spawnSync(cmd, args, {encoding: "utf8", env});
     if (result.status !== 0) {
       throw new Error(`${cmd} ${args.join(" ")} failed:\n${result.stderr}`);
     }
     rows.push(result.stdout.trim().split("\n").pop().split("\t"));
   }
 } finally {
-  server.kill("SIGTERM");
+  server.kill();
 }
 
 const headers = ["client", "median", "min", "max", "user", "sys"];

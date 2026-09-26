@@ -1,8 +1,6 @@
 import {Pool} from "undici";
-import {run} from "./common.js";
+import {ORIGIN, run} from "./common.js";
 
-const PORT = Number(process.env.PORT) || 3210;
-const ORIGIN = `http://127.0.0.1:${PORT}`;
 const pool = new Pool(ORIGIN, {connections: 128});
 
 async function undiciPool(url) {
