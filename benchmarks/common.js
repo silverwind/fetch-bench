@@ -25,7 +25,7 @@ async function runFetch(url, fn, fnOpts) {
 }
 
 export async function run(name, fn, fnOpts = {}) {
-  const depNames = Object.keys(JSON.parse(readFileSync(new URL("1500-deps.json", import.meta.url))).devDependencies);
+  const depNames = Object.keys(JSON.parse(readFileSync(new URL("1500-deps.json", import.meta.url), "utf8")).devDependencies);
   const urls = Array.from({length: REQUESTS_PER_RUN}, (_, idx) => `${ORIGIN}/${depNames[idx % depNames.length].replaceAll("/", "%2f")}?n=${idx}`);
   const runAll = () => pAll(urls.map(url => () => runFetch(url, fn, fnOpts)), {concurrency: CONCURRENCY});
 
